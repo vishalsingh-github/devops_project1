@@ -1,0 +1,41 @@
+git branch
+git status
+git log --oneline
+git reflog #Activity log
+#Set author and email name
+
+git config --global user.name <name>
+git config --global user.mail <mail>
+git config --list
+
+#Move b/w working dir and staging area and git repo
+
+git add # WD to staging
+git commit -m "" #staging to git repo
+git commit -a -m "" # add and commit
+git checkout <hash> # from git repo to different verion of commit and branches (this moves from git repo to working dir)
+git switch - #switch to main branch or git checkout main
+git switch -c <new brach>
+
+#Git branch and merge steps
+git branch <name>
+git checkout feature1 #make changes in this branch and commit
+git checkout main #makes changes and commit into the main branch
+git merge feature1 #After checkout the receiving branch run merge command # IF changes are main in the main branch git will perform recurssive merge AKS 3 way merge
+git log --graph --oneline
+git branch -d feature1 # we can delete the new branch after merging
+
+#Working with remote repos
+git remote -v
+git remote add origin <URL>
+git branch -M main #renames current branch to main
+git push -u origin main # -u = new upsteam branch
+git branch -vv # to check difference in remote and local
+git pull # TO pull changes from the remote repo
+
+#Revert and reset
+git log --oneline
+git revert <commit ID> #Delete everything changed after that commit and makes a new commit keeping everything in commit history
+
+git reset --hard <ID> #goes to the commit and removes all the changes and commits after that ID
+git reset --soft <ID> #Goes to the commit and does not delete any thing
